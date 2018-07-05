@@ -7,7 +7,7 @@ sudo passwd Hod
 #sudo chsh -s /bin/bash Hod
 sudo -u Hod mkdir /home/Hod/My_Folder
 #sudo chown Hod: /home/Hod
-sudo setfacl -m "u:Hod:u+w" /home/Hod
+sudo setfacl -m "u:Hod:rwx" /home/Hod
 i=1
 while [ $i -le 2 ]
 do
@@ -17,8 +17,8 @@ do
   #sudo chmod u+w /home/Hod /home/Prof${i}
   #sudo chown Prof${i}: /home/Prof${i}
   #sudo chmod u+w /home/Prof${i}
-  sudo setfacl -m "u:Hod:u+w" /home/Prof${i}
-  sudo setfacl -m "u:Prof${i}:u+w" /home/Prof${i}
+  sudo setfacl -m "u:Hod:rwx" /home/Prof${i}
+  sudo setfacl -m "u:Prof${i}:rwx" /home/Prof${i}
   x=1
   while [ $x -le 50 ]
   do
@@ -41,12 +41,12 @@ do
   while [ $i -le 2 ]
   do
     #sudo chown Prof${i}: /home/Student${i_1}
-    sudo setfacl -m "u:Prof${i}:u+w" /home/Student${i_1}
+    sudo setfacl -m "u:Prof${i}:rwx" /home/Student${i_1}
   ((i++))
   done
   #sudo chown Student${i_1}: /home/Student${i_1}
   #sudo chmod u+w /home/Student${i_1}
-  sudo setfacl -m "u:Student${i_1}:u+w" /home/Student${i_1}   
+  sudo setfacl -m "u:Student${i_1}:rwx" /home/Student${i_1}   
   ((i_1++))
 done
 #sudo chown Hod: /home/Hod
