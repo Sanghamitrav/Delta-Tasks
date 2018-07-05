@@ -22,8 +22,8 @@ do
   x=1
   while [ $x -le 50 ]
   do
-    touch /home/Prof${i}/Teaching_Material/q${x}.txt
-    cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 100 | head -n 1 > q${x}.txt
+    sudo touch /home/Prof${i}/Teaching_Material/q${x}.txt
+    sudo cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 100 | head -n 1 > q${x}.txt
     ((x++))
   done
   ((i++))
