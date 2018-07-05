@@ -23,7 +23,8 @@ do
   while [ $x -le 50 ]
   do
     sudo touch /home/Prof${i}/Teaching_Material/q${x}.txt
-    sudo cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 100 | head -n 1 > q${x}.txt
+    sudo chmod 777 /home/Prof${i}/Teaching_Material/q${x}.txt
+    sudo cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 100 | head -n 1 > /home/Prof${i}/Teaching_Material/q${x}.txt
     ((x++))
   done
   ((i++))
